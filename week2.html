@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* display, position 배우기 */
+      /* display: block, inline, inline-block */
+      /* position: static, relative, absolute, fixed, sticky */
+      /* layout: flex, grid (중요) */
+
+      /* display: block 
+        - width가 100% 기본
+        - 같은 블록 레벨 요소가 추가되면 줄바꿈이 일어난다
+        - box model의 모든 영향을 받는다. (border, margin, padding)
+      */
+
+      /* display: inline
+        - width가 자신의 컨텐츠만큼만 차지한다.
+        - size 조절이 불가능한다. (width, height)
+        - box model의 모든 영향을 받는다. (border, margin, padding)
+      */
+
+      /* display: inline-block
+        - width가 자신의 컨텐츠만큼만 차지한다.
+        - size 조절이 가능하다. (width, height)
+        - box model의 모든 영향을 받는다. (border, margin, padding)
+      */
+
+      /* 
+        각 tag마다 기본적으로 가지고 있는 display 속성들이 다를 수 있다. 
+        block: div, p, ul, ol, li, ...
+        inline: span, a, img, ...
+        inline-block: input, button, select, textarea, ...
+      */
+      ul,
+      ol,
+      li {
+        list-style: none;
+      }
+
+      .inline-list li {
+        display: inline;
+        width: 300px; /* inline 요소는 사이즈 조절 불가 */
+        height: 100px; /* inline 요소는 사이즈 조절 불가 */
+        border: 1px solid #000;
+        background-color: #f3bebe;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="block-list">
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+    </ul>
+    <ul class="inline-list">
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+    </ul>
+  </body>
+</html>

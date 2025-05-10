@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+        순서 선택자
+        first-child 선택자 사용하기
+        last-child 선택자 사용하기
+        nth-child 선택자 사용하기
+        nth-of-type 선택자 사용하기
+        2개 선택자의 차이점:
+        nth-child 선택자는 모든 자식 요소 중에서 특정 순서의 요소를 선택한다
+        nth-of-type 선택자는 특정 타입의 요소 중에서 특정 순서의 요소를 선택한다.
+        */
+
+      /* first-child - 첫번째 순서의 자식 요소 선택 */
+      ul li:first-child {
+        color: red;
+      }
+
+      /* last-child - 첫번째 순서의 자식 요소 선택 */
+      ul li:last-child {
+        color: blue;
+      }
+
+      /* type:nth-child 는 전체 순서가 맞지 않으면 css 적용이 안되기 때문에 대부분 type은 사용안해도 O */
+      /* 자기 자신에 있는 id, class 등을 선택할 때는 선택자를 붙여서 사용 */
+      div#child-seletor :nth-child(2) {
+        color: red;
+      }
+
+      /* nth-child는 1번째 순서부터 연속으로 이어지는 순서로만 접근 가능 */
+      div#child-seletor p:nth-child(1) {
+        color: red;
+      }
+
+      div#child-seletor span:nth-child(1) {
+        color: blue;
+      }
+
+      /* nth-of-type은 특정 대상만을 기준으로 순서로 접근할 수 있다 */
+      div#child-seletor span:nth-of-type(2) {
+        color: blue;
+      }
+
+      /* class는 type의 순서까지 읽힌다 */
+      div#child-seletor p.child:nth-of-type(2) {
+        background-color: #f3bebe;
+      }
+
+      /* nth-last-of-type은 nth-of-type을 반대 순서로 접근하는 것과 같은 기능 */
+      div#child-seletor div:nth-last-of-type(1) {
+        background-color: #dadaf5;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <div id="child-seletor">
+      <p>p1</p>
+      <div class="child">div2</div>
+      <span>span3</span>
+      <p class="child">p4</p>
+      <div class="child">div5</div>
+      <span>span6</span>
+    </div>
+  </body>
+</html>

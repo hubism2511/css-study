@@ -1,0 +1,174 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* head 영역에 style을 주는 방식 */
+      /* css 선택지 */
+      /* class 선택자 */
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #ddd;
+      }
+
+      .border-box {
+        border: 5px solid black;
+      }
+
+      .inline-border-box {
+        border: 5px solid red;
+        box-sizing: border-box;
+      }
+
+      .padding-box {
+        padding: 50px;
+      }
+
+      .margin-box {
+        margin: 50px;
+      }
+
+      /*
+      css 선택자
+      - 태그 선택자
+        - html 태그명을 그대로 선택
+      - 클래스 선택자
+        - 클래스 이름을 선택(. 기호를 통해서 선택)
+      - id 선택자
+        - id 이름을 선택 (# 기호를 통해서 선택)
+      - 속성 선택자
+        - 속성 이름을 선택 (ex) [type="text"]
+      */
+      /* 태그 선택자 */
+      body {
+        background-color: #ccc;
+      }
+
+      /* id 선택자 */
+      #box1 {
+        background-color: skyblue;
+      }
+
+      /* 
+      속성 선택자는 제한은 없음 
+      이미 가지고 있는 속성도 가능하고 custom하게 적용되는 data-* 속성도 가능
+      */
+      [type="text"] {
+        background-color: red;
+      }
+      [data-content="content"] {
+        color: blue;
+      }
+
+      /* 자식 요소 선택자 (>)*/
+      /* > 기호를 쓰지 않으면 (띄어쓰기) 하위 모든 자식 요소에 적용됨 */
+      /* > 기호를 쓰는 경우 내 바로 아래 자식 요소에만 적용됨 */
+      .depth-box div {
+        border: 1px solid black;
+        background-color: #fff;
+      }
+      .depth-box > div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .depth-box > div > div {
+        color: blue;
+      }
+
+      /* 
+      인접 선택자 (+)
+      - 인접 선택자는 내 바로 다음에 해당하는 요소가 있어야만 적용된다.
+      - 중간에 하나만 다른 요소가 있어도 적용되지 않는다.
+      */
+      .prev-box + .next-box {
+        background-color: red;
+      }
+
+      /* 
+      형제 선택자 (~) 
+      - 인접한 다음 요소에 있는 모든 선택 요소에 적용된다.
+      - 중간에 다른 요소가 껴들어있어도 적용된다.
+      */
+      .current-box ~ .brother-box {
+        color: red;
+      }
+
+      /* 형제 선택자, 인접 선택자 모두 나와 같은 뎁스에 있어야만 적용된다 */
+
+      /* .current-box + span + .brother-box {
+        color: red;
+      } */
+
+      /*
+      스타일 적용 순서
+      */
+    </style>
+  </head>
+  <body>
+    <!-- css의 박스모델 이해하기-->
+    <!-- 
+    border: 선의 굵기는 박스 사이즈에 영향을 준다.
+    ex) 300px -> border 5px -> 310px
+    ex) box-sizing: border-box -> 박스 사이즈에 영향을 주지 않고 내부에 선이 생기게 된다.
+
+      -->
+    <!-- <div style="">inline style 방식</div>-->
+    <div id="box1" class="box border-box">
+      <p>박스 모델 예시</p>
+    </div>
+    <div class="box inline-border-box">border-box 박스 모델 예시</div>
+    <!--
+    padding: 박스 내부 여백
+    - 박스 사이즈에 영향을 준다.
+    - inline 요소에 영향을 주지 않는다.
+    margin: 박스 외부 여백
+    - 박스 사이즈와 무관하다.
+    - inline 요소에도 사용할 수 있다.
+    -->
+    <div class="box padding-box">패딩 박스 모델 예시</div>
+    <div class="box padding-box border-box">패딩+보더 박스 모델 예시</div>
+    <div class="box padding-box border-box margin-box">
+      패딩+보더+마진 박스 모델 예시
+    </div>
+    <input type="text" />
+    <p data-content="content">content</p>
+
+    <div class="depth-box">
+      <div>중첩1</div>
+      <div>
+        중첩2
+        <div>중첩3</div>
+      </div>
+    </div>
+
+    <div class="box prev-box">prev box</div>
+    <div class="box next-box">next box</div>
+
+    <div class="brother-box">brother box</div>
+    <span>separator</span>
+    <div class="brother-box">brother box</div>
+    <div class="current-box">current-box</div>
+    <span>separator</span>
+    <div class="brother-box">brother box</div>
+    <div class="brother-box">brother box</div>
+    <span>separator</span>
+    <div class="brother-box">brother box</div>
+    <div class="brother-box">brother box</div>
+
+    <!-- text 컬러는 모든 하위요소 전체 적용 -->
+    <p style="color: red">
+      <span
+        >1111
+        <span
+          >2222
+          <span>3333</span>
+        </span>
+      </span>
+    </p>
+
+    <div style="height: 1000px"></div>
+  </body>
+</html>

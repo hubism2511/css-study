@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+        position sticky 
+        - 기본적으로는 relative 처럼 주변 부모 요소의 위치 값을 이어 받아서 현재 위치가 정해진다.
+        - 스크롤이 되기 시작하면 그때부터 fixed 처럼 자신의 위치가 고정되기 시작함
+        - sticky가 동작되기 위해서는 overflow가 적용될 경우 반드시 viewport 범위 내에 부모 요소가 존재해야 한다.
+        - viewport 범위를 벗어난 sticky 동작은 부모 요소에 overflow 속성이 없어야 한다.
+      */
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .content {
+        height: 2000px;
+        background-color: #dfdfdf;
+      }
+
+      .text-box {
+        height: 300px;
+        background-color: #da85e9;
+        overflow-y: auto;
+      }
+
+      .text-box h1 {
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+
+      .text-box p {
+        height: 2000px;
+      }
+
+      .wrapper {
+        overflow-y: auto;
+        /*
+          viewport의 높이값 전체를 쓰기 때문에 viewport 범위는 벗어나지 않음
+          즉, viewport 범위를 벗어난 부모 요소에 의해 sticky가 동작되지 않는 현상을 막을 수 있음
+        */
+        /* height: 100vh; /*viewport 사이즈 */
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        border-bottom: 1px solid #000;
+        z-index: 100; /*
+                        absolute, fixed, sticky 별도의 레이어가 상위에 띄워지는 개념, 
+                        이 중에서 각 레이어의 우선 순위를 정하는데 사용됨
+                        숫자가 높으면 높을수록 상위에 위치함
+                      */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">header</div>
+      <div class="content">
+        <div class="text-box">
+          <h1>title</h1>
+          <p>description</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
