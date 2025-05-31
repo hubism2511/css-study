@@ -1,0 +1,102 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        row-gap: 10px;
+        /* 
+            - gap: row column 
+            - row-gap
+            - column-gap
+            부모 요소 flex에 영향 받은 자식 요소 간의 간격을 제어할 때 사용
+        */
+        /*
+            - 부모에 적용할 수 있는 속성
+            - flex는 딱 자기 바로 아래 자식 요소만 적용된다.
+        */
+        /*
+            - flex-direction
+            - 자식 요소가 적용될 방향
+            - row: 가로 방향 - flex의 default 값
+            - column 세로 방향 - 요소들의 width가 100%로 적용된다.
+            - row-reverse: 가로 방향 역순 (우측 정렬로 바뀌고 아이템들의 순서가 역순으로 변경된다.)
+            - column-reverse: 세로 방향 역순 (하단 정렬로 바뀌고 아이템들의 순서가 역순으로 변경된다.)
+            - 강제로 block 요소들처럼 동작하게 된다.
+        */
+        flex-direction: row;
+        /*
+            - flex-wrap
+            - 자식 요소가 부모의 내부 사이즈에 영향을 받게 할지를 결정하는 속성
+            - nowrap: 자식 요소가 부모의 내부 사이즈에 영향을 받지 않는다. (default)
+            - wrap: 자식 요소가 부모의 내부 사이즈에 영향을 받는다. (공간이 없으면 밑으로 떨어진다.)
+            - wrap-reverse: 자식 요소가 부모의 내부 사이즈에 영향을 받는다. (공간이 없으면 위로 떨어진다.)
+        */
+        flex-wrap: wrap;
+        /*
+            - flex-flow
+            - flex-direction과 flex-wrap을 한 번에 선언할 수 있는 속성
+        */
+        flex-flow: column wrap;
+      }
+      .item {
+        background-color: #dfdfdf;
+        /*
+            padding: top right bottom left
+            padding: top-bottom right-left
+            padding: top right-left bottom
+        */
+
+        /* 0px 선언 시는: px을 제외하고 0만 넣는다. */
+
+        /* flex에서 자식 요소에 적용할 수 있는 속성 */
+        padding: 10px;
+      }
+      /*
+        - flex-grow
+        - flex 정렬 시 남는 공간에 대한 차지 비율
+        - 차지 비율은 한쪽 direction을 grow을 준 수치만큼 합산해서 거기에 대한 비율로 가져간다.
+      */
+
+      .grow-1 {
+        flex-grow: 1;
+      }
+
+      .grow-2 {
+        flex-grow: 2;
+      }
+      .item-row-group {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    display: flex
+    flex에 관련한 속성들을 이해하고 배우는 시간
+    -->
+
+    <!-- display: flex의 선언 자체는 부모 container 요소에 선언해야 한다. -->
+    <div class="container">
+      <div class="item-row-group">
+        <div class="item grow-1">item1</div>
+        <div class="item grow-2">item2</div>
+        <div class="item grow-1">item3</div>
+      </div>
+      <div class="item-row-group">
+        <div class="item grow-1">item4</div>
+        <div class="item grow-2">item5</div>
+        <div class="item grow-1">item6</div>
+      </div>
+      <!-- <span class="item">item4</span>
+      <span class="item">item5</span>
+      <div class="item">item6</div>
+      <div class="item">item7</div>
+      <div class="item">item8</div>
+      <span class="item">item9</span>
+      <span class="item">item10</span> -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        /**/
+      }
+      .grow-group {
+        display: flex;
+      }
+      .grow-group2 {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      .grow-group3 {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      .group-item {
+        background-color: #fafaf2;
+        padding: 10px 30px;
+        border: 1px solid #000;
+        flex-grow: 1;
+        gap: 10px;
+      }
+      .first-item {
+        /*
+            - flex-basis
+            - 자식 요소의 기본 크기를 정의하는 속성 (default: auto)
+            - 기본 크기는 자식 요소의 내용 크기를 기준으로 한다.
+            - 박스 모델에 의해 영향 받는 padding, border 등의 사이즈도 basis 크기에 영향을 주지 않는다.
+        */
+        flex-basis: 300px;
+
+        /*
+            - flex-shrink
+            - 자식 요소의 축소 비율을 정의하는 속성 (default: 1)
+            - 축소 비율은 한쪽 dire
+        */
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="grow-group">
+        <div class="group-item first-item">item1</div>
+        <div class="group-item">item2</div>
+        <div class="group-item">item3</div>
+      </div>
+      <div class="grow-group">
+        <div class="group-item">item4</div>
+        <div class="group-item">item5</div>
+        <div class="group-item">item6</div>
+        <div class="group-item">item7</div>
+        <div class="group-item">item8</div>
+      </div>
+      <div class="grow-group">
+        <div class="grow-group2">
+          <div class="group-item">item9</div>
+          <div class="group-item">item10</div>
+          <div class="group-item">item11</div>
+        </div>
+        <div class="grow-group2">
+          <div class="group-item">item12</div>
+          <div class="group-item">item13</div>
+          <div class="group-item">item14</div>
+        </div>
+      </div>
+      <div class="grow-group3">
+        <div class="group-item">item4</div>
+        <div class="group-item">item5</div>
+        <div class="group-item">item6</div>
+        <div class="group-item">item7</div>
+        <div class="group-item">item8</div>
+      </div>
+    </div>
+  </body>
+</html>
