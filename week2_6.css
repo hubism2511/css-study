@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  /* border-radius : 박스의 모서리를 둥글게 처리하는 속성 */
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 2px solid #333;
+  /* 0 ~ 50%까지 줄 수 있고 50% 이상은 원형으로 변형된다. */
+  /* border-radius: 50%; */
+  /* box-shadow: 박스에 그림자 효과를 적용하는 속성 */
+  /* box-shadow: 15px 15px 0 0 rgba(0, 0, 0, 0.25); */
+  box-shadow: inset 15px 15px 0 0 rgba(0, 0, 0, 0.25);
+  /* 
+    그림자의 x 위치, 그림자의 y 위치, 그림자의 퍼지는 정도, 그림자의 크기 
+    inset 속성을 적용하면 내부에 그림자 적용
+  */
+}

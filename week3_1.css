@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  position: relative;
+  left: 0;
+  padding: 10px 20px;
+  outline: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  color: #333;
+  border-radius: 5px;
+  transition: all 0.25s linear;
+  /* 
+    transition을 적용하면 속성에 변화가 일어날 때 자동적으로 지연 처리를 하게 된다. 
+    transition을 적용할 수 있는 종류
+    transition: 속성 시간 지연속성;
+
+    ease: 천천히 시작하고 빠르게 끝나는 효과
+    linear: 일정한 속도로 변화하는 효과
+    ease-in: 천천히 시작하고 빠르게 끝나는 효과
+    ease-out: 빠르게 시작하고 천천히 끝나는 효과
+    ease-in-out: 천천히 시작하고 천천히 끝나는 효과
+    cubic-bezier: 커브 효과를 줄 수 있는 효과
+
+    all: 모든 속성에 적용
+    background-color: 배경색에 적용
+    color: 글자색에 적용
+    border: 테두리에 적용
+    border-radius: 모서리에 적용
+    outline: 테두리에 적용
+    box-shadow: 그림자에 적용
+    transform: 크기, 위치에 적용
+  */
+
+  /*
+    transform: 크기, 위치를 제어 가능
+    ** 화면의 layout을 발생시키지 않는다. (cpu를 사용하지 않음)
+    scale: 크기를 조절
+    rotate: 회전
+    translate: 이동
+    skew: 기울기
+  */
+
+  /*& 는 자기자신*/
+  &:hover {
+    /*width, heigth 로 직접 변화를 주는것 보다 transform을 사용하는게 연산이 더 빠르다*/
+    /*
+      *브라우저 렌더링 과정 중요!*  
+
+      화면이 cpu를 써서 변화를 줌(갱신) -> 렌더링
+      Layout shift -> 화면 갱신이 몇번이 일어났는가
+      transform은 위 Layout shift가 일어나지 않는다
+    */
+    transform: scale(2) translate(100px, 0);
+    /* transform: ; */
+    /* border-width: 2px; */
+    /* border-color: rgba(255, 0, 0, 0.75);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+    padding: 20px 40px; */
+  }
+}

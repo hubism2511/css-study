@@ -1,0 +1,41 @@
+.container {
+  img {
+    width: 200px;
+    /* 
+      vertical-align : 요소의 새로 정렬
+      inline-block 요소의 세로 정렬에만 적용된다.
+      top, middle, bottom
+    */
+    vertical-align: middle;
+    &:nth-of-type(1) {
+      height: 100px;
+    }
+    &:nth-of-type(2) {
+      height: 400px;
+    }
+    &:nth-of-type(3) {
+      height: 250px;
+    }
+  }
+}
+.formfield {
+  display: flex;
+  flex-wrap: wrap;
+}
+.textfield {
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  input {
+    border: 0;
+    height: 40px;
+    outline: none;
+    /* vertical-align: top; */
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    /* vertical-align: top; */
+  }
+}

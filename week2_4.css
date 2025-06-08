@@ -1,0 +1,138 @@
+/* css 속성들 */
+/* font 속성들 */
+/* font-family: ; */
+.em-header {
+  font-size: 16px;
+  /* 단위는 px, em, rem */
+  /*
+    em : 비율 (ex 1em = 부모 태그 비율과 같다 , 2em = 부모 태그 비율의 2배)
+         em 단위는 바로 상위 부모 요소의 크기를 기준으로 계산되기 때문에 중첩이 깊어질수록 예상이 어려움
+         일반적으로 퍼블리싱할 때 잘 사용하는 단위는 아님
+
+    rem : rem은 html에 적용된 폰트 사이즈를 기준으로 크기 배율을 계산한다.
+          rem은 html 기준으로 배율을 계산하기 때문에 예상이 쉬움
+          접근성 측면에서 시각장애인 혹은 노약자를 위해 화면의 크기 제어를 해주는 UI를 제공해줘야함
+          접근성 제어 혹은 모바일 ui 환경에서 rem 단위를 사용하면 제어하기 용이하다
+*/
+  h1 {
+    font-family: "Arial", "Apple SD Gothic Neo", "sans-serif";
+    font-size: 3em;
+  }
+  p {
+    font-size: 1.5em;
+    span {
+      font-size: 2em;
+    }
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+.rem-header {
+  h1 {
+    font-family: "Arial", "Apple SD Gothic Neo", "sans-serif";
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    /* 줄 간격 */
+    /* 단위 없이 숫자만 적용하면 배율처럼 적용됨 */
+    /* 줄 간격을 px만큼 적용하는 게 아니라 font-size가 늘어난 배율만큼 간격이 벌어지는거라 생각하면 됨 */
+    text-align: left;
+    /* 텍스트 정렬, left, right, center */
+    text-indent: 20px;
+    span {
+      font-size: 2rem;
+      /* color: #ff0000; */
+      color: rgba(255, 0, 0, 0.5);
+      /* 00 ~ ff */
+      /* 단축 표현은 00 혹은 ff 처럼 앞뒤 문자가 같으면 하나 생략 가능 */
+      /* rgb는 0~255의 값을 가짐, alpha는 0~1까지의 값을 가짐 */
+      font-weight: 200;
+      /* weight 100 ~ 900 */
+      /* import 해온 폰트가 제공하는 수치에 따라 범위는 달라질 수 있음 */
+      letter-spacing: -0.05em;
+      /* 글자 간격 */
+      /* em 단위를 사용하면 현재 엘리먼트에 적용된 폰트 크기의 배율을 사용해서 제어할 수 있음 */
+      text-decoration: underline wavy red;
+      /* 3개를 한번에 선언 가능: line, style, color */
+      /* line: none, underline, overline, line-through */
+      /* style: solid, dashed, dotted, wavy */
+    }
+  }
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+  text-indent: 20px;
+}
+
+.box {
+  display: flex;
+  column-gap: 1rem;
+  text-align: center;
+  .box-item {
+    width: 12.5rem;
+    height: 12.5rem;
+    background-size: contain;
+    /* 배경 이미지를 채우는 방식에 대한 제어 */
+    /* cover: 박스에 맞게 배경 이미지를 비율에 맞춰 강제로 채움 - 이미지가 박스를 넘어갈 수 있음 */
+    /*  */
+    /* background-position: bottom right; */
+    background-position: 10px 50px;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    outline: 1px solid red;
+    box-sizing: border-box;
+    /* background-color: #c9f873; */
+    /* background-image: url("https://picsum.photos/200"); */
+    /* 배경에 들어갈 이미지를 링크 방식으로 적용 */
+    /* background-size: 50px; */
+    /* 배경 이미지의 사이즈를 제어 */
+    /* background-repeat: no-repeat; */
+    /* 배경 이미지의 반복 여부를 제어: repeat, repeat-x, repeat-y, no-repeat */
+  }
+  .box-image-1 {
+    background-image: url("https://picsum.photos/200?id=1");
+  }
+  .box-image-2 {
+    background-image: url("https://picsum.photos/200?id=2");
+  }
+  .box-image-3 {
+    background-image: url("https://picsum.photos/200?id=3");
+  }
+}
+.box-2 {
+  display: flex;
+  margin-top: 50px;
+  padding: 100px;
+}
+.box-2-item {
+  width: 100px;
+  height: 100px;
+  background-color: #eee;
+  border: 1px dashed blue;
+  outline: 5px solid red;
+  /* outline은 박스 바깥 쪽에 생기는 선 */
+  /* box model  */
+}
+
+/* 크기 속성들 */
+/* 색상 속성들 */
+/* 배경 속성들 */
+/* 테두리 속성들 */
+/* 
+  정렬 속성들 
+  1. 텍스트 정렬
+  2. 이미지 정렬
+*/
